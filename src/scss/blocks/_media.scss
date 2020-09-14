@@ -1,0 +1,16 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .first {
+        &__title {
+            font-size: 40px;
+        }
+        &__phone {
+            right: -122px;
+        }
+        &__bar {
+            right: 50px;
+        }
+    }
+}

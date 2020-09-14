@@ -1,0 +1,127 @@
+.first {
+    position: relative;
+    padding: 40px 0 68px 0;
+    &_bg1, &_bg2, &_bg3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    } 
+    &_bg1 {
+        background: $gradient;
+        z-index: 10;
+    }
+    &_bg2 {
+        background-color: $background-color;
+        z-index: 10;
+    }
+    &_bg3 {
+        background: url('../../img/screen_1/main_bg.jpg') center (center/cover) no-repeat;
+        z-index: 1;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 133px;
+        &-logo {
+            z-index: 1000;
+        }
+    }
+    &__nav {
+        min-width: 540px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        &-link {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+    }
+    &__content{
+        position: relative;
+        z-index: 1000;
+        max-width: 530px;
+    }
+
+    &__title {
+        font-size: 42px;
+        line-height: 48px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 27px;
+    }
+    &__subtitle {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 300;
+        color: #ffffff;
+        margin-bottom: 40px;
+        span {
+            font-weight: 400;
+        }
+    }
+    &__button {
+        z-index: 1000;
+        margin-bottom: 111px;
+    }
+
+    &__phone {
+        position: absolute;
+        bottom: -179px;
+        right: -285px;
+        &-back{
+            position: absolute;
+            bottom: 0;
+            left: -115px; 
+            z-index: 100;
+
+            &-content {
+                position: absolute;
+                top: 89px;
+                left: 25px;
+            }
+        }
+        &-front {
+            position: absolute;
+            bottom: 0;
+            left: 0; 
+            z-index: 200;
+            &-content {
+                position: absolute;
+                top: 100px;
+                left: 27px;
+            }
+        }
+    }
+    &__bar {
+        position: absolute;
+        bottom: -116px;
+        right: 0;
+        width: 106px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__dots {
+        display: flex;
+        justify-content: space-between;
+        width: 67px;
+    }
+    &__dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 100%;
+        border: 1px solid #fff;
+    }
+    .active {
+        background-color: #fff;
+    }
+    
+}

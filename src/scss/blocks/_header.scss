@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    height: 86px;
+    padding: 20px 0;
+    &__content {
+        display: grid;
+        grid-template: 51px / repeat(5, minmax(130px, auto));
+        grid-auto-rows: 51px;
+        column-gap: 33px;
+        align-self: center;
+    }
+
+    &__item {
+        display: grid;
+        grid-template: repeat(3, 17px) / 28px minmax(130px, auto);
+        grid-auto-rows: 17px;
+        column-gap: 11px;
+    }
+    &__flag {
+        grid-row: 1/4; 
+    }
+    &__country {
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+        color: #242424;
+    }
+    &__tel, &__address, &__link {
+        display: block;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 16px;
+        color: #000;
+    }
+    &__tel, &__link {
+        &:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
