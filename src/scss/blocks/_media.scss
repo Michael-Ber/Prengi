@@ -14,3 +14,89 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .header {
+        height: auto;
+        &__content {
+            grid-template: repeat(2, 51px) / repeat(3,minmax(130px,auto));
+            row-gap: 10px;
+        }
+    }
+    .first {
+        &__title {
+            font-size: 28px;
+        }
+        &__subtitle {
+            font-size: 23px;
+        }
+        &__bar {
+            right: 156px;
+        }
+        &__phone {
+            right: 13px;
+            transform: scale(0.7);
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .header {
+        &__content {
+            grid-template: repeat(2,51px)/repeat(2,auto);
+            row-gap: 23px;
+        }
+    }
+    .first {
+        &__menu {
+            flex-direction: column;
+            &-logo {
+                margin-bottom: 15px;
+            }
+        }
+        &__phone {
+            display: none;
+        }
+        &__title, &__subtitle {
+            text-align: center;
+        }
+        &__button {
+            margin: 0 auto 75px auto;
+        }
+        &__bar {
+            right: 200px;
+            bottom: -90px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+    .header {
+        display: none;
+    }
+    .first {
+        padding: 40px 10px 68px 10px;
+        &__menu {
+            margin-bottom: 45px;
+        }
+        &__nav{
+            min-width: 100%;
+            flex-direction: column;
+            &-link {
+                line-height: 23px;
+            }
+        }
+        &__bar {
+            right: 95px;
+        }
+    }
+}
