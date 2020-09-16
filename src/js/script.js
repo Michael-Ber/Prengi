@@ -29,4 +29,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     //Создаем карточки на второй странице
+
+    //Carousel
+
+    const track = document.querySelector('.third__carousel-track'),
+          slides = document.querySelectorAll('.third__carousel-slide'),
+          width = window.getComputedStyle(slides[0]).width;
+    
+   console.log(width);
 });
