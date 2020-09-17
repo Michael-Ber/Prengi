@@ -25,6 +25,20 @@
             }
         }
     }
+    .third {
+        &__carousel {
+            &-wrapper {
+                width: 740px;
+            }
+            &-slide {
+                min-width: 740px;
+            }
+            &-left, &-right {
+                top: 32%;
+                transform: unset;
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {

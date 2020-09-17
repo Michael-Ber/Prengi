@@ -34,7 +34,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const track = document.querySelector('.third__carousel-track'),
           slides = document.querySelectorAll('.third__carousel-slide'),
-          width = window.getComputedStyle(slides[0]).width;
+          width = +window.getComputedStyle(slides[0]).width.slice(0,-2),
+          btnNext = document.querySelector('.third__carousel-right'),
+          btnPrev = document.querySelector('.third__carousel-left');
     
-   console.log(width);
+    track.style.width = `${width * slides.length}px`;
+
+    let offset = 0;
+
+    btnNext.addEventListener('click', () => {
+        console.log('next');
+        if(offset >= ((slides.length-1) * width)) {
+            offset = 0;
+        }else {
+            offset += width;
+        }
+        console.log(offset);
+        track.style.transform = `translateX(-${offset}px)`;
+    });
+
+    btnPrev.addEventListener('click', () => {
+        if(offset <= 0) {
+            offset = (slides.length-1) * width;
+        }else {
+            offset -= width;
+        }
+        console.log(offset);
+        track.style.transform = `translateX(-${offset}px)`;
+    });
 });
