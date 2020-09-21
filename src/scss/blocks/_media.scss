@@ -26,7 +26,7 @@
         }
     }
     .third {
-        height: 760px;
+        min-height: 760px;
         &__carousel {
             &-wrapper {
                 width: 740px;
@@ -85,7 +85,7 @@
         }
     }
     .third {
-        height: 630px;
+        min-height: 630px;
         &__tabs-header {
             width: 710px;
             &-item {
@@ -176,7 +176,7 @@
         }
     }
     .third {
-        height: 580px;
+        min-height: 580px;
         &__title {
             font-size: 26px;
         }
@@ -194,7 +194,6 @@
             }
         }
         &__carousel {
-            
             &-wrapper {
                 width: 400px;
             }

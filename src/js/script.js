@@ -32,86 +32,90 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Carousel
 
-    const track = document.querySelector('.third__carousel-track'),
+    window.addEventListener('resize', () => {
+        const track = document.querySelector('.third__carousel-track'),
           slides = document.querySelectorAll('.third__carousel-slide'),
-          width = +window.getComputedStyle(slides[0]).width.slice(0,-2),
+          wrapper = document.querySelector('.third__carousel-wrapper'),
+          width = +window.getComputedStyle(wrapper).width.slice(0,-2),
           btnNext = document.querySelector('.third__carousel-right'),
           btnPrev = document.querySelector('.third__carousel-left');
     
-    track.style.width = `${width * slides.length}px`;
+        track.style.width = `${width * slides.length}px`;
 
-    let offset = 0;
+        let offset = 0;
+        track.style.transform = `translateX(${offset}px)`;
 
-    btnNext.addEventListener('click', moveNext.bind(this, track));
+        btnNext.addEventListener('click', moveNext.bind(this, track));
 
-    btnPrev.addEventListener('click', movePrev.bind(this, track));
+        btnPrev.addEventListener('click', movePrev.bind(this, track));
 
-    function moveNext(element) {
-        if(offset >= ((slides.length-1) * width)) {
-            offset = 0;
-        }else {
-            offset += width;
+        function moveNext(element) {
+            if(offset >= ((slides.length-1) * width)) {
+                offset = 0;
+            }else {
+                offset += width;
+            }
+            element.style.transform = `translateX(-${offset}px)`;
         }
-        element.style.transform = `translateX(-${offset}px)`;
-    }
 
-    function movePrev(element) {
-        if(offset <= 0) {
-            offset = (slides.length-1) * width;
-        }else {
-            offset -= width;
+        function movePrev(element) {
+            if(offset <= 0) {
+                offset = (slides.length-1) * width;
+            }else {
+                offset -= width;
+            }
+            element.style.transform = `translateX(-${offset}px)`;
         }
-        element.style.transform = `translateX(-${offset}px)`;
-    }
 
-    //Взаимодействие со слайдером при помощи мыши или касания пальцем
-    let moving = false,
-        initX,
-        currentX,
-        diffDist,
-        threshold = 100;
-    const carousel = document.querySelector('.third__carousel');
-    
-   
-    // document.addEventListener('mousedown', swipeStart);
-    carousel.addEventListener('touchstart', swipeStart, {passive: false});
-
-    // document.addEventListener('mousemove', swipeAction);
-    carousel.addEventListener('touchmove', swipeAction, {passive: false});
-
-    // document.addEventListener('mouseup', swipeEnd);
-    carousel.addEventListener('touchend', swipeEnd);
-    
-    
-
-    function swipeStart(e) {
-        e.preventDefault();
-        initX = e.touches[0].clientX;
-        moving = true;
+        //Взаимодействие со слайдером при помощи мыши или касания пальцем
+        let moving = false,
+            initX,
+            currentX,
+            diffDist,
+            threshold = 100;
+        const carousel = document.querySelector('.third__carousel');
         
-    }
+    
+        // document.addEventListener('mousedown', swipeStart);
+        carousel.addEventListener('touchstart', swipeStart, {passive: false});
 
-    function swipeAction(e) {
-        e.preventDefault();
-        if (moving) {
-            currentX = e.touches[0].clientX;
-            diffDist = currentX - initX;
-            track.style.transform = `translateX(${diffDist - offset}px)`;
+        // document.addEventListener('mousemove', swipeAction);
+        carousel.addEventListener('touchmove', swipeAction, {passive: false});
 
-            if(diffDist < -threshold) {
-                moveNext(track);
-                moving = false;
-            }else if(diffDist > threshold) {
-                movePrev(track);
-                moving = false;
+        // document.addEventListener('mouseup', swipeEnd);
+        carousel.addEventListener('touchend', swipeEnd);
+        
+        
+
+        function swipeStart(e) {
+            e.preventDefault();
+            initX = e.touches[0].clientX;
+            moving = true;
+            
+        }
+
+        function swipeAction(e) {
+            e.preventDefault();
+            if (moving) {
+                currentX = e.touches[0].clientX;
+                diffDist = currentX - initX;
+                track.style.transform = `translateX(${diffDist - offset}px)`;
+
+                if(diffDist < -threshold) {
+                    moveNext(track);
+                    moving = false;
+                }else if(diffDist > threshold) {
+                    movePrev(track);
+                    moving = false;
+                }
             }
         }
-    }
 
-    function swipeEnd() {
-        moving = false;
-        track.style.transform = `translateX(${-offset}px)`;
-    }
+        function swipeEnd() {
+            moving = false;
+            track.style.transform = `translateX(${-offset}px)`;
+        }
+        });
 
     //Tabs
 
