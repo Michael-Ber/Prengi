@@ -10,12 +10,15 @@
     } 
     &_bg1 {
         background: $gradient;
+        z-index: 11;
     }
     &_bg2 {
         background-color: $background-color;
+        z-index: 11;
     }
     &_bg3 {
         background: url('../../img/screen_1/main_bg.jpg') center (center/cover) no-repeat;
+        z-index: 10;
     }
 
     &__menu {
