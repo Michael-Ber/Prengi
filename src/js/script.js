@@ -33,14 +33,21 @@ window.addEventListener('DOMContentLoaded', () => {
     //Carousel
 
     window.addEventListener('resize', () => {
+        callSlider();
+    });
+
+    function callSlider() {
         const track = document.querySelector('.third__carousel-track'),
           slides = document.querySelectorAll('.third__carousel-slide'),
           wrapper = document.querySelector('.third__carousel-wrapper'),
-          width = +window.getComputedStyle(wrapper).width.slice(0,-2),
+          width = window.getComputedStyle(wrapper).width,
           btnNext = document.querySelector('.third__carousel-right'),
           btnPrev = document.querySelector('.third__carousel-left');
-    
-        track.style.width = `${width * slides.length}px`;
+        console.log(width);
+        track.style.width = 100 * slides.length + '%';
+        slides.forEach(slide => {
+            slide.style.width = width;
+        });
 
         let offset = 0;
         track.style.transform = `translateX(${offset}px)`;
@@ -115,7 +122,9 @@ window.addEventListener('DOMContentLoaded', () => {
             moving = false;
             track.style.transform = `translateX(${-offset}px)`;
         }
-        });
+    }
+
+    callSlider();
 
     //Tabs
 
