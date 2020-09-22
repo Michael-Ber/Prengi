@@ -40,13 +40,13 @@ window.addEventListener('DOMContentLoaded', () => {
         const track = document.querySelector('.third__carousel-track'),
           slides = document.querySelectorAll('.third__carousel-slide'),
           wrapper = document.querySelector('.third__carousel-wrapper'),
-          width = window.getComputedStyle(wrapper).width,
+          width = +window.getComputedStyle(wrapper).width.slice(0, -2),
           btnNext = document.querySelector('.third__carousel-right'),
           btnPrev = document.querySelector('.third__carousel-left');
-        console.log(width);
+
         track.style.width = 100 * slides.length + '%';
         slides.forEach(slide => {
-            slide.style.width = width;
+            slide.style.width = `${width}px`;
         });
 
         let offset = 0;
@@ -63,6 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 offset += width;
             }
             element.style.transform = `translateX(-${offset}px)`;
+            console.log(offset);
         }
 
         function movePrev(element) {
