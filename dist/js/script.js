@@ -28,7 +28,103 @@ window.addEventListener('DOMContentLoaded', () => {
         return +window.getComputedStyle(element).width.slice(0, -2);
     }
 
-    //Создаем карточки на второй странице
+    //Работа с модальным окном
+
+    const modal = document.querySelector('.modal'),
+          form = document.querySelector('.form'),
+          callBtn = document.querySelector('.sixth__btn'),
+          close = document.querySelector('.modal__close');
+
+    callBtn.addEventListener('click', showModal.bind(this, modal));
+    close.addEventListener('click', hideModal.bind(this, modal));
+
+    function showModal(window) {
+        window.classList.add('show');
+        window.classList.remove('hide');
+    }
+
+    function hideModal (window) {
+        window.classList.remove('show');
+        window.classList.add('hide');
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target.getAttribute('data-close') == '') {
+            hideModal(modal);
+        }
+    });
+    
+    // Работа с формой
+
+    const message = {
+        "success": "Спасибо, скоро мы с вами свяжемся",
+        "loading": 'icons/form/spinner1.gif',
+        "failure": "Что-то пошло не так"
+    }
+
+    async function postData(url, data) {
+        let res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        })
+        return await res.json();
+    }
+
+    function showThanksModal (message) {
+        prevWindow = document.querySelector('.modal__wrapper');
+        hideModal(prevWindow);
+        let newWindow = document.createElement('div');
+        newWindow.classList.add('modal__wrapper');
+        newWindow.innerHTML = `
+            <div data-close class="modal__close">&times;</div>
+            <div class="modal__title">${message}</div>
+        `;
+        modal.append(newWindow);
+
+        setTimeout(() => {
+            newWindow.remove();
+            hideModal(modal);
+            showModal(prevWindow);
+        },5000);
+    }
+
+    function bindPostData(formName, message) {
+        formName.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const spinner = document.createElement('img');
+			spinner.src = message.loading;
+			spinner.style.cssText = `
+					display: block;
+					margin: 10px auto 0 auto;	
+					max-width: 20px;
+			`;
+			form.insertAdjacentElement("afterend", spinner);
+            const formData = new FormData(formName);
+            
+            let json = JSON.stringify(Object.fromEntries(formData.entries()));
+            
+            postData('http://localhost:3000/requests', json)
+            .then(data => {
+                showThanksModal(message.success);
+                console.log('success');
+            })
+            .finally(() => {
+                form.reset();
+            })
+            .catch(() => {
+                showThanksModal(message.failure);
+            });
+    
+        });
+    }
+
+    bindPostData(form, message);
+
+
+
 
     //Carousel
 

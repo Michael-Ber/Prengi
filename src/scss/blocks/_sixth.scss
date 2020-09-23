@@ -1,6 +1,7 @@
 .sixth {
     min-height: 690px;
     padding: 80px 10px;
+    position: relative;
     &__title {
         width: 590px;
         margin-bottom: 30px;
@@ -57,5 +58,7 @@
         margin: 0 auto;
         padding: 23px 40px 21px 40px;
     }
+    
+
 
 }

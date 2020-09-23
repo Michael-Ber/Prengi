@@ -32,7 +32,8 @@
     "IE 10"
   ],
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "json-server": "^0.16.1"
   },
   "description": ""
 }
