@@ -39,10 +39,10 @@
         right: 0;
     }
     &__water {
-        background: url('../../icons/screen_2/watermark_.png') center (center/cover) no-repeat;
+        background: url('../icons/screen_2/watermark_.png') center (center/cover) no-repeat;
     }
     &__water-V {
-        background: url('../../icons/screen_2/watermarkV.png') center (center/cover) no-repeat;
+        background: url('../icons/screen_2/watermarkV.png') center (center/cover) no-repeat;
     }
     &__arrows {
         position: relative;
@@ -54,7 +54,7 @@
             transform: translateX(-50%);
             width: 170px;
             height: 50px;
-            background: url('../../icons/screen_2/arrow.png') center (center/cover) no-repeat;
+            background: url('../icons/screen_2/arrow.png') center (center/cover) no-repeat;
             &:nth-child(2) {
                 bottom: 120px;
             }

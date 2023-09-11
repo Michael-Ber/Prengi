@@ -9,7 +9,7 @@
         width: 100%;
     }
     &_bg1 {
-        background: url('../../img/screen_3/woman_bg.jpg') center (center/cover) no-repeat;
+        background: url('../img/screen_3/woman_bg.jpg') center (center/cover) no-repeat;
     }
     &_bg2 {
         background-color: $background-color;
@@ -109,11 +109,11 @@
         }
         &-left {
             left: 50px;
-            background-image: url('../../icons/screen_3/slider_left.png');
+            background-image: url('../icons/screen_3/slider_left.png');
         }
         &-right {
             right: 50px;
-            background-image: url('../../icons/screen_3/slider_right.png');
+            background-image: url('../icons/screen_3/slider_right.png');
         }
     }
 
