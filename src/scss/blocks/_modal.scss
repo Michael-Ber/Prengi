@@ -7,7 +7,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding-top: 100px;
     animation: fadein .5s;
-   
+    z-index: 1000;
 
     &__wrapper {
         display: block;
@@ -17,12 +17,13 @@
         margin: 0 auto;
         border-radius: 3px;
         background-color: #fff;
-    
+
         .form {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             &__input {
                 width: 290px;
                 margin-bottom: 30px;
@@ -33,11 +34,13 @@
                 padding: 0 10px;
                 text-align: center;
             }
+
             &__btn {
                 width: 290px;
             }
         }
     }
+
     &__close {
         font-size: 30px;
         color: #393939;
@@ -47,6 +50,7 @@
         cursor: pointer;
 
     }
+
     &__title {
         font-size: 18px;
         color: #393939;
@@ -55,9 +59,11 @@
         text-align: center;
     }
 }
+
 .show {
     display: block;
 }
+
 .hide {
     display: none;
 }

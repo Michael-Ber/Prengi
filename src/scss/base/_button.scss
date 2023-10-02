@@ -1,7 +1,7 @@
 .btn {
     width: 241px;
     background-color: $main-color;
-    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.07);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.07);
     font-size: 16px;
     line-height: 16px;
     font-weight: 700;
@@ -10,5 +10,11 @@
     text-align: center;
     padding: 23px 42px 21px 42px;
     border-radius: 6px;
+    text-decoration: none !important;
+    color: white !important;
     border: none;
+
+    &:hover {
+        background-color: darken($main-color, 10%);
+    }
 }
