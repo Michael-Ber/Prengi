@@ -11,13 +11,16 @@
     }
 
     &__item {
-        display: grid;
-        grid-template: repeat(3, 17px) / 28px minmax(130px, auto);
-        grid-auto-rows: 17px;
-        column-gap: 11px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
     }
     &__flag {
-        grid-row: 1/4; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1/2; 
     }
     &__country {
         display: block;

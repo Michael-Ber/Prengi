@@ -1,4 +1,4 @@
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .container {
         max-width: 960px;
     }
@@ -7,10 +7,7 @@
             font-size: 40px;
         }
         &__phone {
-            right: -122px;
-        }
-        &__bar {
-            right: 50px;
+            left: 57%
         }
     }
     .second {
@@ -51,7 +48,7 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .container {
         max-width: 720px;
     }
@@ -69,12 +66,9 @@
         &__subtitle {
             font-size: 23px;
         }
-        &__bar {
-            right: 156px;
-        }
         &__phone {
-            right: 13px;
             transform: scale(0.7);
+            left: 55%;
         }
     }
     .second {
@@ -99,9 +93,6 @@
             &-wrapper {
                 width: 540px;
             }
-            // &-slide {
-            //     min-width: 540px;
-            // }
             &-left, &-right {
                 top: 22%;
             }
@@ -144,7 +135,7 @@
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
     .container {
         max-width: 540px;
     }
@@ -157,7 +148,7 @@
     .first {
         &__menu {
             flex-direction: column;
-            &-logo {
+            .logo {
                 margin-bottom: 15px;
             }
         }
@@ -171,8 +162,7 @@
             margin: 0 auto 75px auto;
         }
         &__bar {
-            right: 200px;
-            bottom: -90px;
+            align-self: center;
         }
     }
     .third {
@@ -221,7 +211,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     .container {
         max-width: 100%;
     }
@@ -239,9 +229,6 @@
             &-link {
                 line-height: 23px;
             }
-        }
-        &__bar {
-            right: 95px;
         }
     }
     .second {
@@ -287,9 +274,6 @@
             &-wrapper {
                 width: 280px;
             }
-            // &-slide {
-            //     min-width: 280px;
-            // }
             &-left, &-right {
                 display: none;
             }

@@ -10,6 +10,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
     }
 
     &_bg1 {
@@ -27,15 +28,20 @@
         z-index: 10;
     }
 
+    &__wrapper {
+        position: relative;
+        z-index: 100;
+    }
+
     &__menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 133px;
 
-        &-logo {
-            z-index: 1000;
-        }
+        // .logo {
+        //     z-index: 1000;
+        // }
     }
 
     &__nav {
@@ -54,9 +60,12 @@
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         position: relative;
-        z-index: 1000;
         max-width: 530px;
+        z-index: 1000;
     }
 
     &__title {
@@ -80,57 +89,65 @@
     }
 
     &__button {
-        margin-bottom: 111px;
+        display: block;
+        margin-bottom: 50px;
     }
 
     &__phone {
-        display: block;
+        display: flex;
         position: absolute;
-        bottom: -179px;
-        right: -285px;
+        top: 25%;
+        left: 60%;
 
         &-back {
-            position: absolute;
-            bottom: 0;
-            left: -115px;
-            z-index: 100;
-
-            &-content {
-                position: absolute;
-                top: 89px;
-                left: 25px;
+            position: relative;
+            width: 284px;
+            height: 505px;
+            img {
+                &:nth-child(1) {
+                    position: absolute;
+                    z-index: 1;
+                }
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 89px;
+                    left: 25px;
+                    z-index: 2;
+                }
             }
         }
-
         &-front {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            z-index: 200;
-
-            &-content {
-                position: absolute;
-                top: 100px;
-                left: 27px;
+            width: 320px;
+            height: 569px;
+            top: -64px;
+            left: 100px;
+            img {
+                &:nth-child(1) {
+                    position: absolute;
+                    z-index: 1;
+                }
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 89px;
+                    left: 25px;
+                    z-index: 2;
+                }
             }
+            
         }
     }
 
     &__bar {
-        position: absolute;
-        bottom: -116px;
-        right: 0;
-        width: 106px;
-        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 106px;
     }
 
     &__dots {
         display: flex;
         justify-content: space-between;
-        width: 67px;
     }
 
     &__dot {
