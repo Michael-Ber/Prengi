@@ -2,8 +2,12 @@
     min-height: 690px;
     padding: 80px 10px;
     position: relative;
+
     &__title {
-        width: 590px;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
         margin-bottom: 30px;
     }
 
@@ -14,7 +18,7 @@
         border: 1px solid $main-color;
         border-radius: 3px;
         margin-bottom: 74px;
-    } 
+    }
 
     &__square {
         position: relative;
@@ -24,41 +28,50 @@
         justify-content: center;
         align-items: center;
     }
+
     &__plug {
         background-color: #fff;
         position: absolute;
 
-        &_up, &_bottom {
+        &_up,
+        &_bottom {
             width: 223px;
             height: 5px;
         }
-        &_left, &_right {
+
+        &_left,
+        &_right {
             height: 223px;
             width: 5px;
         }
+
         &_left {
             left: -1px;
             top: 38px;
         }
+
         &_right {
             right: -1px;
             top: 38px;
         }
+
         &_up {
             top: -1px;
             right: 38px;
         }
+
         &_bottom {
             bottom: -1px;
             right: 38px;
         }
     }
+
     &__btn {
         display: block;
         margin: 0 auto;
         padding: 23px 40px 21px 40px;
     }
-    
+
 
 
 }

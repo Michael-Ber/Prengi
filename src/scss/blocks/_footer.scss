@@ -2,55 +2,68 @@
     min-height: 497px;
     padding: 50px 10px 40px 10px;
     background-color: $main-color;
+
     &__grid {
         display: grid;
         grid-template: repeat(3, minmax(10px, auto)) / repeat(4, minmax(111px, auto));
         grid-auto-rows: auto;
+        border-bottom: 1px solid rgba(#fff, .3);
     }
+
     &__cln1 {
         width: 377px;
     }
+
     &__cln2 {
         width: 264px;
     }
+
     &__cln3 {
         width: 117px;
     }
+
     &__cln4 {
         width: 112px;
     }
+
     &__header {
         font-size: 16px;
         font-weight: 700;
         color: #ffffff;
     }
+
     &__logo {
         width: 177px;
         height: 61px;
         margin: 20px 0;
         background: url('../icons/footer/footer_logo.png') center (center/cover) no-repeat;
     }
+
     &__text {
         font-size: 14px;
         font-weight: 300;
         color: #ffffff;
     }
+
     &__link {
         color: #fff;
         display: block;
         font-size: 14px;
         font-weight: 300;
+
         &:hover {
             color: #fff;
             text-decoration: none;
         }
     }
+
     &__divider {
         height: 1px;
         background-color: rgba(255, 255, 255, .3);
         grid-column: 1/5;
         margin-top: 44px;
     }
+
     &__rights {
         font-size: 13px;
         font-weight: 300;
