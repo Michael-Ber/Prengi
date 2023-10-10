@@ -1,4 +1,4 @@
-function carousel({trackWrapper, slideSelector, wrapperSelector, prevArrow, nextArrow}) {
+function carousel({ trackWrapper, slideSelector, wrapperSelector, prevArrow, nextArrow }) {
     //Carousel
 
     window.addEventListener('resize', () => {
@@ -17,27 +17,26 @@ function carousel({trackWrapper, slideSelector, wrapperSelector, prevArrow, next
         slides.forEach(slide => {
             slide.style.width = `${width}px`;
         });
-
         let offset = 0;
         track.style.transform = `translateX(${offset}px)`;
 
-        btnNext.addEventListener('click', moveNext.bind(this, track));
+        btnNext.addEventListener('click', () => moveNext(track));
 
-        btnPrev.addEventListener('click', movePrev.bind(this, track));
+        btnPrev.addEventListener('click', () => movePrev(track));
 
         function moveNext(element) {
-            if(offset >= ((slides.length-1) * width)) {
+            if (offset >= ((slides.length - 1) * width)) {
                 offset = 0;
-            }else {
+            } else {
                 offset += width;
             }
             element.style.transform = `translateX(-${offset}px)`;
         }
 
         function movePrev(element) {
-            if(offset <= 0) {
-                offset = (slides.length-1) * width;
-            }else {
+            if (offset <= 0) {
+                offset = (slides.length - 1) * width;
+            } else {
                 offset -= width;
             }
             element.style.transform = `translateX(-${offset}px)`;
@@ -50,17 +49,17 @@ function carousel({trackWrapper, slideSelector, wrapperSelector, prevArrow, next
             diffDist,
             threshold = 100;
         const carousel = document.querySelector('.third__carousel');
-        
-    
+
+
         // document.addEventListener('mousedown', swipeStart);
-        carousel.addEventListener('touchstart', swipeStart, {passive: false});
+        carousel.addEventListener('touchstart', swipeStart, { passive: false });
 
         // document.addEventListener('mousemove', swipeAction);
-        carousel.addEventListener('touchmove', swipeAction, {passive: false});
+        carousel.addEventListener('touchmove', swipeAction, { passive: false });
 
         // document.addEventListener('mouseup', swipeEnd);
         carousel.addEventListener('touchend', swipeEnd);
-    
+
         function swipeStart(e) {
             e.preventDefault();
             initX = e.touches[0].clientX;
@@ -74,10 +73,10 @@ function carousel({trackWrapper, slideSelector, wrapperSelector, prevArrow, next
                 diffDist = currentX - initX;
                 track.style.transform = `translateX(${diffDist - offset}px)`;
 
-                if(diffDist < -threshold) {
+                if (diffDist < -threshold) {
                     moveNext(track);
                     moving = false;
-                }else if(diffDist > threshold) {
+                } else if (diffDist > threshold) {
                     movePrev(track);
                     moving = false;
                 }

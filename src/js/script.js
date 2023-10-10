@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
         parentSelector: '.first__content'
     });
 
+
     modal({
         modalSelector: '.modal',
         openBtn: '.sixth__btn',
@@ -30,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
         nextArrow: '.third__carousel-right',
         prevArrow: '.third__carousel-left'
     });
-    
+
     tabs({
         tabHeader: '.third__tabs-header',
         tabHeaderItem: '.third__tabs-header-item',
